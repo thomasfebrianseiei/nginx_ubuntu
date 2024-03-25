@@ -13,6 +13,7 @@ sudo apt install nginx
 
 ### Step 2: Create SSL Certificate and Key
 #### Step 2.1: Create SSL Directory
+
 bash
 Copy code
 sudo mkdir -p /etc/ssl/cmsindonesia.com
