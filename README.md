@@ -1,4 +1,4 @@
-# Setting Up Nginx for cmsindonesia.com
+# Setting Up Nginx
 
 Follow these steps to set up Nginx for serving `cmsindonesia.com` and `admin.cmsindonesia.com`:
 
