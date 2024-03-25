@@ -1,3 +1,6 @@
+Setting Up Nginx for cmsindonesia.com
+Follow these steps to set up Nginx for serving cmsindonesia.com and admin.cmsindonesia.com:
+
 Step 1: Install Nginx
 If Nginx isn't already installed, you can install it using apt:
 
@@ -6,17 +9,28 @@ Copy code
 sudo apt update
 sudo apt install nginx
 Step 2: Create SSL Certificate and Key
-If you don't have SSL certificates, you can create self-signed ones for testing purposes:
-
+Step 2.1: Create SSL Directory
 bash
 Copy code
 sudo mkdir -p /etc/ssl/cmsindonesia.com
+Step 2.2: Generate SSL Certificate and Key
+Run the following command to generate a self-signed SSL certificate and key:
+
+bash
+Copy code
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/cmsindonesia.com/cmsindonesia.com.key -out /etc/ssl/cmsindonesia.com/cmsindonesia.com.pem
-Follow the prompts to fill in your certificate information.
+Follow the prompts to fill in the required information. This will create a self-signed SSL certificate (cmsindonesia.com.pem) and key (cmsindonesia.com.key) valid for 365 days.
+
+Step 2.3: Set Permissions (Optional)
+Optionally, you can set the appropriate permissions for the SSL directory and files:
+
+bash
+Copy code
+sudo chmod -R 600 /etc/ssl/cmsindonesia.com
+This will ensure that only the owner has read and write permissions for the SSL files.
 
 Step 3: Create Nginx Configuration Files
-Create configuration files for each of your server blocks:
-
+Step 3.1: Create Configuration File for cmsindonesia.com
 bash
 Copy code
 sudo nano /etc/nginx/sites-available/cmsindonesia.com
@@ -48,8 +62,7 @@ server {
         add_header Cache-Control "no-cache, no-store, must-revalidate";
     }
 }
-Create the configuration file for the admin.cmsindonesia.com server block:
-
+Step 3.2: Create Configuration File for admin.cmsindonesia.com
 bash
 Copy code
 sudo nano /etc/nginx/sites-available/admin.cmsindonesia.com
