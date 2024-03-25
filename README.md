@@ -6,9 +6,6 @@ Follow these steps to set up Nginx for serving `cmsindonesia.com` and `admin.cms
 
 If Nginx isn't already installed, you can install it using apt:
 
-```bash
-sudo apt update
-sudo apt install nginx
 Step 2: Create SSL Certificate and Key
 Step 2.1: Create SSL Directory
 bash
@@ -116,3 +113,4 @@ If you have a firewall enabled (like UFW), allow HTTP and HTTPS traffic:
 bash
 Copy code
 sudo ufw allow 'Nginx Full'
+
