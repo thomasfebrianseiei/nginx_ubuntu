@@ -1,11 +1,12 @@
-Setting Up Nginx for cmsindonesia.com
-Follow these steps to set up Nginx for serving cmsindonesia.com and admin.cmsindonesia.com:
+# Setting Up Nginx for cmsindonesia.com
 
-Step 1: Install Nginx
+Follow these steps to set up Nginx for serving `cmsindonesia.com` and `admin.cmsindonesia.com`:
+
+### Step 1: Install Nginx
+
 If Nginx isn't already installed, you can install it using apt:
 
-bash
-Copy code
+```bash
 sudo apt update
 sudo apt install nginx
 Step 2: Create SSL Certificate and Key
@@ -115,4 +116,3 @@ If you have a firewall enabled (like UFW), allow HTTP and HTTPS traffic:
 bash
 Copy code
 sudo ufw allow 'Nginx Full'
-Now, Nginx should be configured to serve your sites cmsindonesia.com and admin.cmsindonesia.com on HTTP and HTTPS. Make sure your DNS records are properly configured to point to your server's IP address.
